@@ -1,0 +1,218 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const allProjects = await getCollection('projects');
+const featuredProjects = allProjects
+  .filter(p => p.data.featured)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const services = [
+  {
+    title: 'Data Engineering',
+    description: 'ETL/ELT pipeline design using Azure Data Factory, Synapse, Databricks, and Microsoft Fabric for batch and streaming workloads.',
+    icon: 'data',
+  },
+  {
+    title: 'Web & App Development',
+    description: 'Building modern web applications and mobile apps through vibe-coding - turning ideas into functional products.',
+    icon: 'code',
+  },
+  {
+    title: 'Content Writing',
+    description: 'Technical articles, documentation, and blog posts that make complex topics accessible and engaging.',
+    icon: 'pen',
+  },
+];
+---
+
+<BaseLayout title="Claire McGonigal - Data Engineer">
+  <Hero
+    headline="Claire is a <strong>Data Engineer.</strong>"
+    subheadline="A vibe-coder & part-time content writer."
+  />
+
+  <!-- What I'm Doing Section -->
+  <section class="section services-section">
+    <div class="container">
+      <h2 class="section-title">What I'm Doing</h2>
+      <div class="section-underline"></div>
+
+      <div class="services-grid">
+        {services.map(service => (
+          <div class="service-card">
+            <div class="service-icon">
+              {service.icon === 'data' && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                </svg>
+              )}
+              {service.icon === 'code' && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+              )}
+              {service.icon === 'pen' && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                  <path d="M2 2l7.586 7.586" />
+                  <circle cx="11" cy="11" r="2" />
+                </svg>
+              )}
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">{service.title}</h3>
+              <p class="service-description">{service.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Work Section -->
+  <section class="section featured-section">
+    <div class="container">
+      <h2 class="section-title">Featured Work</h2>
+      <div class="section-underline"></div>
+
+      <div class="projects-grid">
+        {featuredProjects.map(project => (
+          <ProjectCard
+            title={project.data.title}
+            description={project.data.description}
+            category={project.data.category}
+            image={project.data.image}
+            slug={project.slug}
+            tags={project.data.tags}
+            featured={project.data.featured}
+          />
+        ))}
+      </div>
+
+      <div class="view-all">
+        <a href={`${base}work`} class="btn btn-secondary">View All Projects</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Section Styles */
+  .section-title {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .section-underline {
+    width: 40px;
+    height: 3px;
+    background-color: var(--color-accent);
+    margin-bottom: var(--space-10);
+  }
+
+  /* Services Section */
+  .services-section {
+    background-color: var(--color-surface);
+  }
+
+  .services-grid {
+    display: grid;
+    gap: var(--space-6);
+  }
+
+  .service-card {
+    display: flex;
+    gap: var(--space-5);
+    padding: var(--space-6);
+    background-color: var(--color-surface-elevated);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    transition: border-color var(--transition-base);
+  }
+
+  .service-card:hover {
+    border-color: var(--color-accent);
+  }
+
+  .service-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(181, 7, 82, 0.15);
+    color: var(--color-accent);
+    border-radius: var(--radius-md);
+  }
+
+  .service-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .service-content {
+    flex: 1;
+  }
+
+  .service-title {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-2);
+    color: var(--color-primary);
+  }
+
+  .service-description {
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+    font-size: var(--text-sm);
+    line-height: 1.6;
+  }
+
+  @media (min-width: 768px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Featured Section */
+  .featured-section {
+    background-color: var(--color-background);
+  }
+
+  .projects-grid {
+    display: grid;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .view-all {
+    text-align: center;
+    margin-top: var(--space-10);
+  }
+</style>

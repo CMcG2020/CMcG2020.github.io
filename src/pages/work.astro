@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ProjectFilter from '../components/ProjectFilter.astro';
+import { getCollection } from 'astro:content';
+
+const allProjects = await getCollection('projects');
+const sortedProjects = allProjects.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const categories = [...new Set(allProjects.map(p => p.data.category))];
+---
+
+<BaseLayout
+  title="Work - ClaireMcG"
+  description="Explore my portfolio of web development, app development, and content writing projects."
+>
+  <section class="section page-hero">
+    <div class="container">
+      <h1 class="page-title">My Work</h1>
+      <p class="page-subtitle">
+        A collection of projects I've worked on across web development, app development, and content writing.
+      </p>
+    </div>
+  </section>
+
+  <section class="section projects-section">
+    <div class="container">
+      <ProjectFilter categories={categories} />
+
+      <div class="projects-grid grid grid-3">
+        {sortedProjects.map(project => (
+          <div data-category={project.data.category}>
+            <ProjectCard
+              title={project.data.title}
+              description={project.data.description}
+              category={project.data.category}
+              image={project.data.image}
+              slug={project.slug}
+              tags={project.data.tags}
+              featured={project.data.featured}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-bottom: 0;
+  }
+
+  .page-title {
+    margin-bottom: var(--space-4);
+  }
+
+  .page-subtitle {
+    color: var(--color-text-muted);
+    font-size: var(--text-xl);
+    max-width: 600px;
+  }
+
+  .projects-section {
+    padding-top: var(--space-8);
+  }
+
+  .projects-grid {
+    gap: var(--space-8);
+  }
+</style>

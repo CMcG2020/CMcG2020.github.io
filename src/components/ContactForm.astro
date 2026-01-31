@@ -1,0 +1,163 @@
+---
+interface Props {
+  formspreeId?: string;
+}
+
+const { formspreeId = 'YOUR_FORMSPREE_ID' } = Astro.props;
+---
+
+<form
+  action={`https://formspree.io/f/${formspreeId}`}
+  method="POST"
+  class="contact-form"
+>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      placeholder="Your name"
+      autocomplete="name"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+      placeholder="your@email.com"
+      autocomplete="email"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="subject">Subject</label>
+    <select id="subject" name="subject" required>
+      <option value="" disabled selected>What can I help you with?</option>
+      <option value="Web Development">Web Development Project</option>
+      <option value="App Development">App Development</option>
+      <option value="Content Writing">Content Writing</option>
+      <option value="Consultation">General Consultation</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea
+      id="message"
+      name="message"
+      rows="5"
+      required
+      placeholder="Tell me about your project..."
+    ></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="budget" class="optional">Budget Range (Optional)</label>
+    <select id="budget" name="budget">
+      <option value="" selected>Select a budget range</option>
+      <option value="< $1,000">Less than $1,000</option>
+      <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+      <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+      <option value="$10,000+">$10,000+</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-lg submit-btn">
+    Send Message
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon">
+      <path d="M22 2L11 13" />
+      <path d="M22 2L15 22L11 13L2 9L22 2Z" />
+    </svg>
+  </button>
+</form>
+
+<style>
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  label {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    color: var(--color-primary);
+  }
+
+  label.optional::after {
+    content: '';
+    font-weight: 400;
+    color: var(--color-text-muted);
+  }
+
+  input,
+  select,
+  textarea {
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--color-text);
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--space-3) center;
+    background-size: 20px;
+    padding-right: var(--space-10);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .submit-btn {
+    align-self: flex-start;
+    margin-top: var(--space-2);
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Honeypot field */
+  .hp-field {
+    position: absolute;
+    left: -9999px;
+  }
+</style>

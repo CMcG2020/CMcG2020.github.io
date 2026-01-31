@@ -1,0 +1,73 @@
+backend:
+  name: github
+  repo: CMcG2020/claire-portfolio  # Update if repo name differs
+  branch: main
+
+# When using the default proxy server locally
+local_backend: true
+
+# Media files
+media_folder: public/images
+public_folder: /images
+
+# Site URL for previews
+site_url: https://cmcg2020.github.io/claire-portfolio
+
+# Collections
+collections:
+  # Projects Collection
+  - name: projects
+    label: Projects
+    folder: src/content/projects
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text }
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - Development
+          - Apps
+          - Writing
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+      - { label: Featured Image, name: image, widget: image, required: false }
+      - { label: Featured, name: featured, widget: boolean, default: false }
+      - { label: Date, name: date, widget: datetime }
+      - label: Links
+        name: links
+        widget: list
+        required: false
+        fields:
+          - { label: Label, name: label, widget: string }
+          - { label: URL, name: url, widget: string }
+      - { label: Body, name: body, widget: markdown }
+
+  # Blog Collection
+  - name: blog
+    label: Blog Posts
+    folder: src/content/blog
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Excerpt, name: excerpt, widget: text }
+      - { label: Featured Image, name: image, widget: image, required: false }
+      - { label: Category, name: category, widget: string }
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+      - { label: Date, name: date, widget: datetime }
+      - { label: Body, name: body, widget: markdown }
+
+# Editorial workflow (optional - enables draft/review/publish workflow)
+# publish_mode: editorial_workflow

@@ -1,0 +1,184 @@
+---
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const navLinks = [
+  { href: `${base}about`, label: 'About' },
+  { href: `${base}work`, label: 'Portfolio' },
+  { href: `${base}blog`, label: 'Writing' },
+  { href: `${base}contact`, label: 'Contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="header">
+  <nav class="nav container">
+    <a href={base} class="logo">
+      <span class="logo-text">CMcG</span>
+    </a>
+
+    <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+      <span class="hamburger"></span>
+    </button>
+
+    <ul class="nav-links">
+      {navLinks.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class:list={['nav-link', { active: currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) }]}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .logo-text {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .nav-links {
+    display: none;
+    list-style: none;
+    gap: var(--space-10);
+  }
+
+  .nav-link {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 400;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    position: relative;
+    padding: var(--space-2) 0;
+    transition: color var(--transition-fast);
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-accent);
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .hamburger {
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: background-color var(--transition-fast);
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: transform var(--transition-base);
+  }
+
+  .hamburger::before {
+    top: -8px;
+  }
+
+  .hamburger::after {
+    top: 8px;
+  }
+
+  .mobile-menu-btn[aria-expanded="true"] .hamburger {
+    background-color: transparent;
+  }
+
+  .mobile-menu-btn[aria-expanded="true"] .hamburger::before {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .mobile-menu-btn[aria-expanded="true"] .hamburger::after {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Mobile menu open state */
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: var(--color-surface);
+    padding: var(--space-6);
+    gap: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lg);
+  }
+
+  @media (min-width: 768px) {
+    .mobile-menu-btn {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuBtn?.addEventListener('click', () => {
+    const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+    menuBtn.setAttribute('aria-expanded', String(!isExpanded));
+    navLinks?.classList.toggle('open');
+  });
+
+  // Close menu when clicking a link
+  navLinks?.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      menuBtn?.setAttribute('aria-expanded', 'false');
+      navLinks?.classList.remove('open');
+    });
+  });
+</script>
