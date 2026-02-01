@@ -1,6 +1,7 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { base } from '@/utils/base';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
@@ -10,14 +11,13 @@ export async function getStaticPaths() {
   }));
 }
 
-const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const { project } = Astro.props;
 const { Content } = await project.render();
 
 const categoryColors: Record<string, string> = {
   Development: 'var(--color-accent)',
   Apps: 'var(--color-accent-alt)',
-  Writing: '#8b5cf6',
+  Writing: 'var(--color-accent-purple)',
 };
 
 const categoryColor = categoryColors[project.data.category] || 'var(--color-accent)';

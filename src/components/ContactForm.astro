@@ -1,4 +1,6 @@
 ---
+import Icon from '@/components/Icon.astro';
+
 interface Props {
   formspreeId?: string;
 }
@@ -71,10 +73,7 @@ const { formspreeId = 'YOUR_FORMSPREE_ID' } = Astro.props;
 
   <button type="submit" class="btn btn-primary btn-lg submit-btn">
     Send Message
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon">
-      <path d="M22 2L11 13" />
-      <path d="M22 2L15 22L11 13L2 9L22 2Z" />
-    </svg>
+    <Icon name="send" size={20} class="icon" />
   </button>
 </form>
 
@@ -153,11 +152,5 @@ const { formspreeId = 'YOUR_FORMSPREE_ID' } = Astro.props;
   .icon {
     width: 20px;
     height: 20px;
-  }
-
-  /* Honeypot field */
-  .hp-field {
-    position: absolute;
-    left: -9999px;
   }
 </style>

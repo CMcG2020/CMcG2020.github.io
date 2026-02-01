@@ -1,7 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-
-const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { base } from '@/utils/base';
 
 const skills = {
   'Languages & Frameworks': ['Python', 'SQL', 'PySpark', 'Apache Spark'],
@@ -53,6 +52,9 @@ const experience = [
           <p>
             I hold certifications including Microsoft Certified: Azure Data Engineer Associate, Databricks Apache Spark, and multiple Databricks Lakehouse credentials. Based in the UK and open to relocation and remote work.
           </p>
+          <div class="about-cta">
+            <a href={`${base}Claire-McGonigal-CV.pdf`} class="btn btn-primary" download>Download CV</a>
+          </div>
         </div>
       </div>
     </div>
@@ -82,7 +84,7 @@ const experience = [
     <div class="container">
       <h2 class="section-title">Experience</h2>
       <div class="timeline">
-        {experience.map((item, index) => (
+        {experience.map((item) => (
           <div class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
@@ -102,7 +104,10 @@ const experience = [
       <div class="cta-content">
         <h2>Want to work together?</h2>
         <p>I'm always open to discussing new projects and opportunities.</p>
-        <a href={`${base}contact`} class="btn btn-primary btn-lg">Get in Touch</a>
+        <div class="cta-buttons">
+          <a href={`${base}contact`} class="btn btn-primary btn-lg">Get in Touch</a>
+          <a href={`${base}Claire-McGonigal-CV.pdf`} class="btn btn-secondary btn-lg" download>Download CV</a>
+        </div>
       </div>
     </div>
   </section>
@@ -127,6 +132,10 @@ const experience = [
     font-size: var(--text-xl);
     color: var(--color-text-muted);
     margin-bottom: var(--space-6);
+  }
+
+  .about-cta {
+    margin-top: var(--space-8);
   }
 
   /* Skills Section */
@@ -247,5 +256,12 @@ const experience = [
     color: var(--color-text-muted);
     font-size: var(--text-lg);
     margin-bottom: var(--space-8);
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
   }
 </style>

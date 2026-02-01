@@ -10,11 +10,14 @@
   --color-accent: #B50752;
   --color-accent-hover: #D4186A;
   --color-accent-alt: #D4186A;
+  --color-accent-purple: #8b5cf6;
   --color-background: #0a0a0f;
   --color-surface: #131318;
   --color-surface-elevated: #1c1c24;
   --color-text: #e4e4e7;
   --color-text-muted: #71717a;
+  --color-text-dark: #1a1a1a;
+  --color-text-muted-dark: #6b7280;
   --color-border: #27272a;
 
   /* Typography */
@@ -69,6 +72,9 @@
   /* Container */
   --container-max: 1200px;
   --container-padding: var(--space-6);
+
+  /* Layout */
+  --header-height: 60px;
 }
 
 /* Reset */
