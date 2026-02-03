@@ -1,6 +1,6 @@
 # Claire McGonigal - Portfolio
 
-A personal portfolio website showcasing my work as a Data Engineer, built with Astro.
+A personal portfolio website showcasing my work as a Data Engineer, Content Writing and Vibe Coding. Built in collab with Astro.
 
 **[View Live Site](https://cmcg2020.github.io/)**
 
