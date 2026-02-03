@@ -3,8 +3,8 @@ title: "The Art of Evolution: Why Being a Career Chameleon is Your Superpower"
 excerpt: "From mustering cattle in the Australian outback to engineering data pipelines in London—a journey through career reinvention and why the ability to change is the most underrated talent in the AI era."
 category: "Career"
 tags: ["Career Development", "Personal Growth", "AI", "Tech Industry", "Adaptability"]
-image: "/claire-portfolio/images/blog/evolution-hero.png"
-thumbnail: "/claire-portfolio/images/blog/evolution-hero.png"
+image: "/images/blog/evolution-hero.png"
+thumbnail: "/images/blog/evolution-hero.png"
 date: 2026-01-28
 ---
 

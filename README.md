@@ -2,7 +2,7 @@
 
 A personal portfolio website showcasing my work as a Data Engineer, built with Astro.
 
-**[View Live Site](https://CMcG2020.github.io/claire-portfolio)**
+**[View Live Site](https://cmcg2020.github.io/)**
 
 ## Tech Stack
 

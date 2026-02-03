@@ -3,7 +3,7 @@ title: "Reusable API Ingestion Framework"
 description: "Built enterprise-grade API ingestion frameworks handling token refresh, pagination, schema evolution, and fault tolerance."
 category: "Development"
 tags: ["Python", "REST APIs", "Azure", "Data Integration"]
-image: "/claire-portfolio/images/portfolio/api-framework.png"
+image: "/images/portfolio/api-framework.png"
 featured: true
 date: 2024-02-01
 ---

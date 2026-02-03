@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: CMcG2020/claire-portfolio  # Update if repo name differs
+  repo: CMcG2020/CMcG2020.github.io
   branch: main
 
 # When using the default proxy server locally
@@ -11,7 +11,7 @@ media_folder: public/images
 public_folder: /images
 
 # Site URL for previews
-site_url: https://cmcg2020.github.io/claire-portfolio
+site_url: https://cmcg2020.github.io
 
 # Collections
 collections:

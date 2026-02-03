@@ -3,7 +3,7 @@ title: "Enterprise Data Pipeline Architecture"
 description: "Designed and delivered modern data infrastructure and ETL/ELT pipelines for multiple global clients at Accenture."
 category: "Development"
 tags: ["Azure Data Factory", "Databricks", "PySpark", "Microsoft Fabric"]
-image: "/claire-portfolio/images/portfolio/data-pipeline.png"
+image: "/images/portfolio/data-pipeline.png"
 featured: true
 date: 2024-01-15
 links:

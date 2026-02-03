@@ -8,14 +8,14 @@ export async function GET(context: APIContext) {
   return rss({
     title: 'Claire McGonigal - Blog',
     description: 'Thoughts on data engineering, technology, and more.',
-    site: context.site?.toString() || 'https://CMcG2020.github.io/claire-portfolio',
+    site: context.site?.toString() || 'https://cmcg2020.github.io',
     items: blog
       .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
       .map((post) => ({
         title: post.data.title,
         pubDate: post.data.date,
         description: post.data.excerpt,
-        link: `/claire-portfolio/blog/${post.slug}/`,
+        link: `/blog/${post.slug}/`,
       })),
     customData: `<language>en-gb</language>`,
   });

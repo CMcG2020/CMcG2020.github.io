@@ -3,8 +3,8 @@ title: "I'm Just a Stubborn Girl: The Things That Just Happened..."
 excerpt: "Do you ever just start things and then before you know it spirals into something else? From mustering cattle in Australia to house-sitting across Europe—unpacking the wild detours that shaped my life."
 category: "Personal"
 tags: ["Life Lessons", "Travel", "Personal Growth", "Adventure", "Stubbornness"]
-image: "/claire-portfolio/images/blog/stubborn-girl-hero.png"
-image_alt: "/claire-portfolio/images/blog/stubborn-girl-hero.png"
+image: "/images/blog/stubborn-girl-hero.png"
+image_alt: "/images/blog/stubborn-girl-hero.png"
 date: 2026-01-27
 ---
 
@@ -24,7 +24,7 @@ Am I just impulsive or are all these unintentional plans just down to being open
 
 So let's unpack these wild detours a bit. Take the cattle ranch in Australia. I showed up thinking about the classic gap year experience beach, surf and party certainly not wrangling 2,000 cows across dusty plains. I've always loved horse riding and was a decent rider so it's not wildly out there that I would live out the cowgirl fantasy. But sticking it out beyond the usual couple of months (required for the visa) I think that's my stubbornness coming into play! Stubborn enough to say yes to the unknown, then dig in when it's sweaty and scary. It's not blind impulse; it's refusing to bail when the path gets thorny. People like that? We build resilience like muscle memory. You don't just survive a ranch; you learn you can herd chaos and conquer fears.
 
-![Stubborn road](/claire-portfolio/images/blog/stubborn-road.jpg)
+![Stubborn road](/images/blog/stubborn-road.jpg)
 
 Then China, a teaching gig in a town that had never seen foreigners. Hating crowds and attention didn't stop me - stubbornness kicked in as that quiet "I hate this, but I'm going to do it anyway" voice took over. Faking it till you make it isn't for quitters; it's for folks who lean into discomfort because growth's hiding somewhere in there. What does it say? Adaptability wrapped in sheer will. You become the person who thrives in the spotlight they never wanted, and suddenly public speaking fears are manageable. Does it go away? No. Do I hate it less? Again, no. But can I do it? Absolutely!
 

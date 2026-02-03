@@ -90,7 +90,7 @@ Use existing CSS classes: `.btn`, `.btn-primary`, `.btn-secondary`, `.container`
 
 ## Deployment
 
-GitHub Actions workflow (`.github/workflows/deploy.yml`) builds and deploys to GitHub Pages on push to `main`. Site base path is `/claire-portfolio`.
+GitHub Actions workflow (`.github/workflows/deploy.yml`) builds and deploys to GitHub Pages on push to `main`. Site base path is `/`.
 
 ---
 
