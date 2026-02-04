@@ -4,6 +4,12 @@ description: "iOS and Android app that scores open-water swim conditions using m
 category: "Apps"
 tags: ["iOS", "Android", "SwiftUI", "Kotlin", "Open-Meteo"]
 image: "https://raw.githubusercontent.com/CMcG2020/Optiswim/main/OptiSwim/Assets.xcassets/AppLogo.imageset/optiswim_logo.png"
+gallery:
+  - "/images/portfolio/optiswim/optiswim-home-dark.png"
+  - "/images/portfolio/optiswim/optiswim-locations.png"
+  - "/images/portfolio/optiswim/optiswim-settings.png"
+  - "/images/portfolio/optiswim/optiswim-home-light.png"
+  - "/images/portfolio/optiswim/optiswim-conditions.png"
 featured: true
 date: 2026-02-04
 links:
@@ -37,14 +43,6 @@ OptiSwim combines marine (waves, swell) and weather (wind, temperature, UV, weat
 
 - iOS app with SwiftUI
 - Android app with Kotlin + Jetpack Compose
-
-## App UI
-
-![OptiSwim home (dark)](/images/portfolio/optiswim/optiswim-home-dark.png)
-![OptiSwim locations](/images/portfolio/optiswim/optiswim-locations.png)
-![OptiSwim settings](/images/portfolio/optiswim/optiswim-settings.png)
-![OptiSwim home (light)](/images/portfolio/optiswim/optiswim-home-light.png)
-![OptiSwim conditions](/images/portfolio/optiswim/optiswim-conditions.png)
 
 ## Permissions
 

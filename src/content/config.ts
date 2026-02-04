@@ -8,6 +8,7 @@ const projectsCollection = defineCollection({
     category: z.enum(['Development', 'Apps', 'Writing', 'Documentation']),
     tags: z.array(z.string()).optional(),
     image: z.string().optional(),
+    gallery: z.array(z.string()).optional(),
     featured: z.boolean().default(false),
     date: z.date(),
     links: z.array(z.object({
