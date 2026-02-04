@@ -3,6 +3,8 @@ title: "Why I'm Building Everything with Astro in 2024"
 excerpt: "Astro has changed how I think about building websites. Here's why it's become my go-to framework for almost every project."
 category: "Development"
 tags: ["Astro", "Web Development", "Performance"]
+image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80"
+image_alt: "Starry night sky with the Milky Way"
 date: 2024-03-01
 ---
 

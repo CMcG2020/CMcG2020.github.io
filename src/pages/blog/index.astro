@@ -8,14 +8,14 @@ const sortedPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.
 ---
 
 <BaseLayout
-  title="Blog - ClaireMcG"
-  description="Thoughts on web development, design, and building digital products."
+  title="Writing Examples - ClaireMcG"
+  description="Selected writing examples on web development, design, and building digital products."
 >
   <section class="section page-hero">
     <div class="container">
-      <h1 class="page-title">Blog</h1>
+      <h1 class="page-title">Writing Examples</h1>
       <p class="page-subtitle">
-        Thoughts on web development, design, and building digital products.
+        Selected writing examples on web development, design, and building digital products.
       </p>
     </div>
   </section>
@@ -60,7 +60,7 @@ const sortedPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.
 
       {sortedPosts.length === 0 && (
         <div class="empty-state">
-          <p>No blog posts yet. Check back soon!</p>
+          <p>No writing examples yet. Check back soon!</p>
         </div>
       )}
     </div>

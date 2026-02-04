@@ -3,8 +3,8 @@ title: "I'm Just a Stubborn Girl: The Things That Just Happened..."
 excerpt: "Do you ever just start things and then before you know it spirals into something else? From mustering cattle in Australia to house-sitting across Europe—unpacking the wild detours that shaped my life."
 category: "Personal"
 tags: ["Life Lessons", "Travel", "Personal Growth", "Adventure", "Stubbornness"]
-image: "/images/blog/stubborn-girl-hero.png"
-image_alt: "/images/blog/stubborn-girl-hero.png"
+image: "/images/blog/stubborn-road.jpg"
+image_alt: "Stubborn road"
 date: 2026-01-27
 ---
 
