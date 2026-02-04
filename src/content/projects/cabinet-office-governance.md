@@ -1,7 +1,7 @@
 ---
 title: "UK Government Data Governance"
 description: "Led data quality assessments and governance policies at the Cabinet Office, improving data standards across government datasets."
-category: "Development"
+category: "Documentation"
 tags: ["Data Governance", "Tableau", "Data Quality", "Documentation"]
 image: "/images/portfolio/governance.png"
 featured: true

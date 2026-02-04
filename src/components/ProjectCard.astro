@@ -18,6 +18,7 @@ const categoryColors: Record<string, string> = {
   Development: 'var(--color-accent)',
   Apps: 'var(--color-accent-alt)',
   Writing: 'var(--color-accent-purple)',
+  Documentation: 'var(--color-accent-purple)',
 };
 
 const categoryColor = categoryColors[category] || 'var(--color-accent)';
@@ -34,7 +35,9 @@ const categoryColor = categoryColors[category] || 'var(--color-accent)';
           <div class="placeholder-icon">
             {category === 'Development' && <Icon name="development" size={32} />}
             {category === 'Apps' && <Icon name="apps" size={32} />}
-            {category === 'Writing' && <Icon name="writing" size={32} />}
+            {(category === 'Writing' || category === 'Documentation') && (
+              <Icon name="writing" size={32} />
+            )}
           </div>
         </div>
       )}
@@ -118,6 +121,10 @@ const categoryColor = categoryColors[category] || 'var(--color-accent)';
   }
 
   .placeholder-image[data-category="Writing"] {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #4a1942 100%);
+  }
+
+  .placeholder-image[data-category="Documentation"] {
     background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #4a1942 100%);
   }
 
