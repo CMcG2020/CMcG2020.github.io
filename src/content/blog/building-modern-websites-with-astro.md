@@ -1,5 +1,5 @@
 ---
-title: "Why I'm Building Everything with Astro in 2024"
+title: "Why I'm Building Everything with Astro in 2025"
 excerpt: "Astro has changed how I think about building websites. Here's why it's become my go-to framework for almost every project."
 category: "Development"
 tags: ["Astro", "Web Development", "Performance"]
