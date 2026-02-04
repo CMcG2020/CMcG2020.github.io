@@ -38,6 +38,14 @@ OptiSwim combines marine (waves, swell) and weather (wind, temperature, UV, weat
 - iOS app with SwiftUI
 - Android app with Kotlin + Jetpack Compose
 
+## App UI
+
+![OptiSwim home (dark)](/images/portfolio/optiswim/optiswim-home-dark.png)
+![OptiSwim locations](/images/portfolio/optiswim/optiswim-locations.png)
+![OptiSwim settings](/images/portfolio/optiswim/optiswim-settings.png)
+![OptiSwim home (light)](/images/portfolio/optiswim/optiswim-home-light.png)
+![OptiSwim conditions](/images/portfolio/optiswim/optiswim-conditions.png)
+
 ## Permissions
 
 - Location access (when in use and optionally always) to show nearby conditions
