@@ -6,6 +6,9 @@ tags: ["Python", "REST APIs", "Azure", "Data Integration"]
 image: "/images/portfolio/api-framework.png"
 featured: true
 date: 2024-02-01
+links:
+  - label: "GitHub"
+    url: "https://github.com/CMcG2020/Microsoft-Fabric-Data-Platform-Build"
 ---
 
 ## Overview
