@@ -208,18 +208,23 @@ const sortedPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.
   }
 
   @media (min-width: 768px) {
+    .post-card {
+      height: 240px;
+    }
+
     .post-link {
-      grid-template-columns: 300px 1fr;
+      grid-template-columns: 320px 1fr;
     }
 
     .post-image {
       aspect-ratio: auto;
+      height: 100%;
     }
   }
 
   @media (min-width: 1024px) {
     .post-link {
-      grid-template-columns: 350px 1fr;
+      grid-template-columns: 360px 1fr;
     }
   }
 </style>
