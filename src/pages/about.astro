@@ -70,14 +70,14 @@ const experience = [
       <h2 class="section-title">Skills & Technologies</h2>
       <div class="skills-grid">
         {Object.entries(skills).map(([category, items]) => (
-          <div class="skill-category">
+          <article class="skill-category">
             <h3 class="skill-category-title">{category}</h3>
-            <div class="skill-tags">
+            <div class="skill-items">
               {items.map(skill => (
-                <span class="skill-tag">{skill}</span>
+                <span class="skill-item">{skill}</span>
               ))}
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </div>
@@ -149,34 +149,45 @@ const experience = [
 
   .skills-grid {
     display: grid;
-    gap: var(--space-8);
+    gap: var(--space-5);
     margin-top: var(--space-10);
   }
 
-  .skill-category-title {
-    font-size: var(--text-lg);
-    margin-bottom: var(--space-4);
+  .skill-category {
+    background-color: var(--color-surface-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
   }
 
-  .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
+  .skill-category-title {
+    font-size: var(--text-base);
+    letter-spacing: 0.02em;
+    margin-bottom: var(--space-3);
+    color: var(--color-primary);
+  }
+
+  .skill-items {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: var(--space-2);
   }
 
-  .skill-tag {
-    padding: var(--space-2) var(--space-4);
+  .skill-item {
+    padding: var(--space-2) var(--space-3);
     background-color: var(--color-background);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-full);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius-md);
     font-size: var(--text-sm);
     color: var(--color-text);
-    transition: all var(--transition-fast);
+    line-height: 1.4;
   }
 
-  .skill-tag:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
+  @media (min-width: 640px) {
+    .skill-items {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   @media (min-width: 768px) {
