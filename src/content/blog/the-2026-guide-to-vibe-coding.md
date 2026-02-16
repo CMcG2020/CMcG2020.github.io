@@ -3,6 +3,7 @@ title: "The 2026 Guide to Vibe Coding: Creating Apps at the Speed of Thought"
 excerpt: "In 2026, the gap between idea and product has collapsed. This guide covers how vibe coding and agentic orchestration are changing the way apps are built."
 category: "Development"
 tags: ["Vibe Coding", "AI", "Agentic AI", "MVP", "Product Development"]
+image: "/images/blog/vibe_code.png"
 date: 2026-02-16
 ---
 
